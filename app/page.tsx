@@ -68,32 +68,19 @@ const Home = () => {
       <Appbar />
       {/* Hero Section */}
       <Redirect />
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen border-b flex items-center justify-center overflow-hidden">
         {/* Animated background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[100px] animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full blur-[100px] animate-pulse delay-1000"></div>
-          </div>
-        </div>
 
         <div className="container relative z-10 mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             {/* Logo/Brand */}
             <div className="flex items-center justify-center gap-3 mb-6">
               <Music2 className="w-12 h-12 text-primary" />
-              <h1 className="text-5xl md:text-7xl font-bold  from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Muzii
-              </h1>
             </div>
 
             {/* Headline */}
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-              Let Your Fans Control
-              <br />
-              <span className="from-primary to-secondary bg-clip-text text-transparent">
-                Your Stream Music
-              </span>
+              Let Your Fans Control Your Stream Music
             </h2>
 
             {/* Subheadline */}
@@ -103,11 +90,11 @@ const Home = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <button  className="text-lg px-8 py-6 h-auto">
+              <button  className="flex hover:bg-black hover:text-white transition-all duration-200  cursor-pointer  justify-center items-center gap-4 border text-lg px-8 py-6">
                 <Play className="w-5 h-5" />
                 Start Streaming
               </button>
-              <button className="text-lg px-8 py-6 h-auto border-2 border-primary/50 hover:border-primary">
+              <button className="flex justify-center items-center cursor-pointer gap-4 border text-lg px-8 py-6">
                 <Users className="w-5 h-5" />
                 Join as Fan
               </button>
@@ -132,41 +119,10 @@ const Home = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
             <div className="w-1.5 h-3 bg-primary rounded-full"></div>
           </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Why Creators <span className="text-primary">Love</span> Muzii
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to create an unforgettable interactive music experience
-            </p>
-          </div>
-
-          {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 group"
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div> */}
         </div>
       </section>
 
@@ -187,7 +143,7 @@ const Home = () => {
               <div key={index} className="relative">
                 {/* Connector line (hidden on last item) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
+                  <div className="hidden lg:block absolute top-16 left-[60%] w-[80%] h-0.5 "></div>
                 )}
 
                 <div className="relative space-y-4 text-center">
@@ -195,7 +151,7 @@ const Home = () => {
                   <div className="text-6xl font-bold text-primary/20 mb-2">{step.step}</div>
 
                   {/* Icon */}
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/50">
+                  <div className="w-16 h-16 mx-auto rounded-full ">
                     <step.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
 
@@ -210,19 +166,17 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-secondary p-1">
-            <div className="bg-card rounded-[22px] p-12 md:p-16 text-center space-y-8">
-              {/* Icon */}
+      <section className="px-4">
+        <div className="flex flex-col gap-9 justify-center items-center">
+            {/* Icon */}
               <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/50">
+                <div className="w-20 h-20 rounded-full from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/50">
                   <Music2 className="w-10 h-10 text-primary-foreground" />
                 </div>
               </div>
 
               {/* Heading */}
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-col gap-4 justify-center items-center text-center">
                 <h2 className="text-4xl md:text-5xl font-bold">
                   Ready to Transform Your Streams?
                 </h2>
@@ -233,32 +187,22 @@ const Home = () => {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <button className="text-lg px-8 py-6 h-auto">
+                <button className="flex hover:bg-black hover:text-white transition-all duration-200  cursor-pointer justify-center items-center gap-4 border text-lg px-8 py-6 h-auto">
                   Get Started Free
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="text-lg px-8 py-6 h-auto">
+                <button className="flex justify-center items-center gap-4 hover:animate-pulse cursor-pointer border text-lg px-8 py-6 h-auto">
                   Watch Demo
                 </button>
               </div>
 
               {/* Trust badges */}
-              <div className="pt-8 flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span>No credit card required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-secondary"></div>
-                  <span>Free 30-day trial</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-accent"></div>
-                  <span>Cancel anytime</span>
-                </div>
+              <div className="pt-8 flex  flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
+                <span>No credit card required</span>
+                <span>Free 30-day trial</span>
+                <span>Cancel anytime</span>
               </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -270,7 +214,7 @@ const Home = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Music2 className="w-8 h-8 text-primary" />
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-2xl font-bold ">
                   Muzii
                 </span>
               </div>
